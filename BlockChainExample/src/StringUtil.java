@@ -2,6 +2,8 @@ import java.security.MessageDigest;
 
 public class StringUtil {
 
+    //SHA256 is one of many crytpo algorithms
+
     //Applies Sha256 to a string and returns the result.
     public static String applySha256(String input) {
         try {

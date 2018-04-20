@@ -3,10 +3,12 @@ import java.util.Date;
 
 public class Block {
 
-    public String hash;
-    public String previousHash;
-    private String data; //our data will be a simple message.
+    public String hash; // holds blocks digital signature
+    public String previousHash; // previous blocks hash
+    private String data; //holds our data which will be a simple message.
     private long timeStamp; //as number of milliseconds since 1/1/1970.
+
+   //variable incremented for mining to try and find a hash with a number of zeros infront depending on difficulty
     private int nonce;
 
     //Block Constructor.
@@ -19,6 +21,7 @@ public class Block {
     }
 
     //Calculate new hash based on blocks contents
+    // apply to all parts of block you dont want tampered with previous hash/ data / timestamp
     public String calculateHash() {
         String calculatedhash = StringUtil.applySha256(
                 previousHash +
